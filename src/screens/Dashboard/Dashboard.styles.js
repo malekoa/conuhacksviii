@@ -1,4 +1,5 @@
 import IntroductionImage from "../../assets/background.jpg";
+import { Colors } from "../../styles/theme";
 
 const styles = {
   container: {
@@ -9,8 +10,8 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(255, 255, 255, 0.5)",
-    borderRadius: "10px",
-    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+    borderRadius: "15px",
+    boxShadow: Colors.shadow,
   },
   backgroundImg: {
     backgroundImage: `url(${IntroductionImage})`,
@@ -23,6 +24,11 @@ const styles = {
     left: 0,
     zIndex: -1,
   },
+  card: {
+    borderRadius: "15px",
+    height: "150px",
+    boxShadow: Colors.shadow,
+  }
 };
 
 export default styles;
