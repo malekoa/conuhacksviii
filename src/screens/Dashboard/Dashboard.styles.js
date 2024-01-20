@@ -5,7 +5,7 @@ const styles = {
   container: {
     padding: "10px",
     minHeight: "80vh",
-    width: "80vw", 
+    width: "100%", 
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -25,9 +25,13 @@ const styles = {
     zIndex: -1,
   },
   card: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     borderRadius: "15px",
-    height: "320px",
+    height: "300px",
     boxShadow: Colors.shadow,
+    padding: "10px",
   }
 };
 

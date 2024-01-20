@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { Colors } from "../../styles/theme";
 import Chart from "chart.js/auto";
 
-const BarChart = () => {
+const DonutChart = () => {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
@@ -15,25 +15,26 @@ const BarChart = () => {
     // Chart.js setup
     const ctx = chartRef.current.getContext("2d");
     chartInstance.current = new Chart(ctx, {
-      type: "bar",
+      type: "doughnut", // Set the chart type to doughnut
       data: {
-        labels: ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"],
+        labels: ["Label 1", "Label 2", "Label 3", "Label 4"],
         datasets: [
           {
-            label: "Bar Chart Example",
-            data: [12, 19, 3, 5, 2],
-            backgroundColor: Colors.lightNavyBlue,
-            borderColor: Colors.navyBlue,
+            label: "Donut Chart Example",
+            data: [12, 19, 3, 5],
+            backgroundColor: [
+              Colors.lightNavyBlue,
+              Colors.navyBlue,
+              Colors.lightPink,
+              Colors.pink,
+            ], 
+            borderColor: Colors.white, 
             borderWidth: 1,
           },
         ],
       },
       options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
+        cutout: "60%",
       },
     });
 
@@ -47,9 +48,9 @@ const BarChart = () => {
 
   return (
     <div>
-      <canvas ref={chartRef} width="250" height="250"></canvas>
+      <canvas ref={chartRef} width="250" height="150"></canvas>
     </div>
   );
 };
 
-export default BarChart;
+export default DonutChart;

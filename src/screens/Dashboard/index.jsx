@@ -2,13 +2,11 @@ import { Grid, Paper, Typography } from "@mui/material";
 import Search from "../../components/Search";
 import BarChart from "../../components/BarChart";
 import LineChart from "../../components/LineChart";
+import DonutChart from "../../components/DonutChart";
 import { Colors } from "../../styles/theme"
 import styles from "./Dashboard.styles";
 
 const Dashboard = () => {
-
-  const lineChartWidth = 400; 
-  const lineChartHeight = 300; 
 
   return (
     <div>
@@ -29,7 +27,9 @@ const Dashboard = () => {
             </Paper>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Paper elevation={0} style={styles.card}></Paper>
+            <Paper elevation={0} style={styles.card}>
+              <DonutChart />
+            </Paper>
           </Grid>
           <Grid item xs={12} md={8}>
             <Paper elevation={0} style={styles.card}>
