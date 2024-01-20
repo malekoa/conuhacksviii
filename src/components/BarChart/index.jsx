@@ -30,8 +30,16 @@ const BarChart = () => {
       },
       options: {
         scales: {
+          x: {
+            grid: {
+              display: false
+            }
+          },
           y: {
             beginAtZero: true,
+            grid: {
+              display: false
+            }
           },
         },
       },
