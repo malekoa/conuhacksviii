@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Colors } from "../../styles/theme";
 import Chart from "chart.js/auto";
 
 const LineChart = () => {
@@ -21,8 +22,8 @@ const LineChart = () => {
           {
             label: "Line Chart Example",
             data: [15, 9, 33, 5, 12],
-            backgroundColor: "rgba(75, 192, 192, 0.2)",
-            borderColor: "rgba(75, 192, 192, 1)",
+            backgroundColor: Colors.navyBlue,
+            borderColor: Colors.navyBlue,
             borderWidth: 1,
             fill: false,
           },
