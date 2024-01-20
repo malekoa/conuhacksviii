@@ -6,6 +6,10 @@ import { Colors } from "../../styles/theme"
 import styles from "./Dashboard.styles";
 
 const Dashboard = () => {
+
+  const lineChartWidth = 400; 
+  const lineChartHeight = 300; 
+
   return (
     <div>
       <div style={styles.backgroundImg} />

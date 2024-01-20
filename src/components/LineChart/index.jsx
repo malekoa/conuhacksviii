@@ -24,7 +24,7 @@ const LineChart = () => {
             backgroundColor: "rgba(75, 192, 192, 0.2)",
             borderColor: "rgba(75, 192, 192, 1)",
             borderWidth: 1,
-            fill: false, // Fill area under the line
+            fill: false, // true if you wanna fill up the area under the curve
           },
         ],
       },
@@ -46,8 +46,8 @@ const LineChart = () => {
   }, []); // Empty dependency array to run the effect only once
 
   return (
-    <div>
-      <canvas ref={chartRef} width="400" height="300"></canvas>
+    <div style={{ justifyContent: "center" }}>
+      <canvas ref={chartRef} width="400" height="150"></canvas>
     </div>
   );
 };
