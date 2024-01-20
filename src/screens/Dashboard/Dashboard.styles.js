@@ -4,7 +4,7 @@ import { Colors } from "../../styles/theme";
 const styles = {
   container: {
     padding: "10px",
-    minHeight: "90vh",
+    minHeight: "80vh",
     width: "80vw", 
     display: "flex",
     justifyContent: "center",
@@ -18,7 +18,7 @@ const styles = {
     backgroundSize: "cover",
     backgroundPosition: "center",
     width: "100%",
-    height: "100%",
+    height: "100vh",
     position: "absolute",
     top: 0,
     left: 0,
@@ -26,7 +26,7 @@ const styles = {
   },
   card: {
     borderRadius: "15px",
-    height: "300px",
+    height: "320px",
     boxShadow: Colors.shadow,
   }
 };

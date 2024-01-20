@@ -1,30 +1,32 @@
-import { useState } from "react"
-import { TextField, Button, Grid } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
+import SearchIcon from "@mui/icons-material/Search";
+import styles from "./SearchBar.styles";
 
-const Search = () => { 
-  const [text, setText] = useState(""); 
-
+const Search = ({ onSearch }) => { 
   const handleInputChange = (event) => {
-    setText(event.target.value); 
+    onSearch(event.target.value);
   };
-
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={8}>
-        <TextField
-          label="Enter Postal Code..."
-          variant="outlined"
-          fullWidth
-          value={text}
-          onChange={handleInputChange}
-        />
-      </Grid>
-      <Grid item xs={4}>
-        <Button variant="contained" className="postal-search-btn">
-          Search
-        </Button>
-      </Grid>
-    </Grid>
+    <TextField
+      fullWidth
+      sx={{
+        ...styles.SearchBar_root,
+      }}
+      variant="outlined"
+      placeholder={"Search using postal code..."}
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <SearchIcon color="action" />
+          </InputAdornment>
+        ),
+        sx: {
+          ...styles.SearchBar_inputProps,
+        },
+      }}
+      onChange={handleInputChange}
+    />
   );
 }
 export default Search;

@@ -1,5 +1,6 @@
 import { Grid, Paper, Typography } from "@mui/material";
 import Search from "../../components/Search";
+import BarChart from "../../components/BarChart";
 import { Colors } from "../../styles/theme"
 import styles from "./Dashboard.styles";
 
@@ -18,7 +19,9 @@ const Dashboard = () => {
             </Paper>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Paper elevation={0} style={styles.card}></Paper>
+            <Paper elevation={0} style={styles.card}>
+              <BarChart />
+            </Paper>
           </Grid>
           <Grid item xs={12} md={4}>
             <Paper elevation={0} style={styles.card}></Paper>
