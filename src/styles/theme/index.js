@@ -1,6 +1,7 @@
 export const Colors = {
   // main logo colors
- 
+  navyBlue: "#067FD0",
+  pink: "#E63B60",
   // black & white
   white: "#FFFFFF",
   black: "#000000",
