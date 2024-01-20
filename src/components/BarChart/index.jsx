@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Colors } from "../../styles/theme";
 import Chart from "chart.js/auto";
 
 const BarChart = () => {
@@ -21,8 +22,8 @@ const BarChart = () => {
           {
             label: "Bar Chart Example",
             data: [12, 19, 3, 5, 2],
-            backgroundColor: "rgba(75, 192, 192, 0.2)",
-            borderColor: "rgba(75, 192, 192, 1)",
+            backgroundColor: Colors.lightNavyBlue,
+            borderColor: Colors.navyBlue,
             borderWidth: 1,
           },
         ],
@@ -46,7 +47,7 @@ const BarChart = () => {
 
   return (
     <div>
-      <canvas ref={chartRef} width="400" height="300"></canvas>
+      <canvas ref={chartRef} width="200" height="200"></canvas>
     </div>
   );
 };
