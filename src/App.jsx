@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
@@ -8,32 +6,41 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { Button } from "@mui/material";
 
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <Button variant="contained">MUI Button</Button>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Doughnut
+        data={{
+          labels: ["Red", "Blue", "Yellow"],
+          datasets: [
+            {
+              label: "My First Dataset",
+              data: [300, 50, 100],
+              backgroundColor: [
+                "rgb(255, 99, 132)",
+                "rgb(54, 162, 235)",
+                "rgb(255, 205, 86)",
+              ],
+              hoverOffset: 4,
+            },
+          ],
+        }}
+      ></Doughnut>
+      <Button
+        onClick={() => {
+          setCount((count) => count + 1);
+        }}
+        variant="contained"
+      >
+        count is {count}
+      </Button>
     </>
   );
 }
