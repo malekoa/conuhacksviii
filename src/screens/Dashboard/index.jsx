@@ -1,4 +1,5 @@
 import { Grid, Paper, Typography } from "@mui/material";
+import Search from "../../components/Search";
 import { Colors } from "../../styles/theme"
 import styles from "./Dashboard.styles";
 
@@ -6,6 +7,7 @@ const Dashboard = () => {
   return (
     <div>
       <div style={styles.backgroundImg} />
+      <Search />
       <div style={styles.container}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={8}>
