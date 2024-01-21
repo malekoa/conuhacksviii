@@ -3,10 +3,14 @@ import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import styles from "./SearchBar.styles";
 
-const Search = ({ onSearch }) => { 
-  const handleInputChange = (event) => {
-    onSearch(event.target.value);
+// eslint-disable-next-line react/prop-types
+const Search = ({ onEnterPressed }) => {
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      onEnterPressed(event.target.value);
+    }
   };
+
   return (
     <TextField
       fullWidth
@@ -25,8 +29,9 @@ const Search = ({ onSearch }) => {
           ...styles.SearchBar_inputProps,
         },
       }}
-      onChange={handleInputChange}
+      onKeyPress={handleKeyPress}
     />
   );
-}
+};
+
 export default Search;
