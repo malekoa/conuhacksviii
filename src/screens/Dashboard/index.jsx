@@ -60,8 +60,7 @@ const Dashboard = () => {
               <Grid
                 container
                 alignItems={"flex-start"}
-                alignSelf={"flex-start"}
-                m={3}
+                m={1}
                 spacing={2}
                 style={{ textAlign: 'left' }}
               >

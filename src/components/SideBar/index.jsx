@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Grid } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import PlaceIcon from "@mui/icons-material/Place";
-import AirIcon from "@mui/icons-material/Air";
 import CloudIcon from "@mui/icons-material/Cloud";
 import PedalBikeIcon from "@mui/icons-material/PedalBike";
 import EmojiPeopleIcon from "@mui/icons-material/EmojiPeople";
@@ -19,10 +18,9 @@ const SideBar = () => {
           </Link>
         </Grid>
         <Grid item>
-          <PlaceIcon />
-        </Grid>
-        <Grid item>
-          <AirIcon />
+          <Link to="/location">
+            <PlaceIcon />
+          </Link>
         </Grid>
         <Grid item>
           <Link to="/environmentsafety">
@@ -30,13 +28,19 @@ const SideBar = () => {
           </Link>
         </Grid>
         <Grid item>
-          <PedalBikeIcon />
+          <Link to="/bike">
+            <PedalBikeIcon />
+          </Link>
         </Grid>
         <Grid item>
-          <EmojiPeopleIcon />
+          <Link to="/safty">
+            <EmojiPeopleIcon />;
+          </Link>
         </Grid>
         <Grid item>
-          <DirectionsCarIcon />
+          <Link to="/cars">
+            <DirectionsCarIcon />
+          </Link>
         </Grid>
       </Grid>
     </div>
