@@ -1,47 +1,32 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Dashboard from "./screens/Dashboard";
+import Location from "./screens/Location";
+import EnvironmentSafetyDashboard from "./screens/EnvironmentSafetyDashboard";
+import Bike from "./screens/Bike";
+import Cars from "./screens/Cars";
+import Safety from "./screens/Safety";
+import SideBar from "./components/SideBar";
 import "./App.css";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
-import { Button } from "@mui/material";
-
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Doughnut } from "react-chartjs-2";
-
-ChartJS.register(ArcElement, Tooltip, Legend);
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <Doughnut
-        data={{
-          labels: ["Red", "Blue", "Yellow"],
-          datasets: [
-            {
-              label: "My First Dataset",
-              data: [300, 50, 100],
-              backgroundColor: [
-                "rgb(255, 99, 132)",
-                "rgb(54, 162, 235)",
-                "rgb(255, 205, 86)",
-              ],
-              hoverOffset: 4,
-            },
-          ],
-        }}
-      ></Doughnut>
-      <Button
-        onClick={() => {
-          setCount((count) => count + 1);
-        }}
-        variant="contained"
-      >
-        count is {count}
-      </Button>
-    </>
+    <Router>
+      <div className="app-container">
+        <div className="sidebar">
+          <SideBar />
+        </div>
+        <div className="dashboard">
+          <Routes> {/* Use Routes instead of Switch */}
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/location" element={<Location />} />
+            <Route path="/environmentsafety" element={<EnvironmentSafetyDashboard />} />
+            <Route path="/bike" element={<Bike />} />
+            <Route path="/safety" element={<Safety />} />
+            <Route path="/cars" element={<Cars />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
