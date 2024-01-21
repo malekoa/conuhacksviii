@@ -7,16 +7,19 @@ import HorizontalBarChart from "../../components/HorizontalBarChart";
 import { Colors } from "../../styles/theme";
 import Statistics from "../../components/Statistics";
 import { isPostalCodeExist, getPostalCodeData } from "../../data/dataUtilities";
+import { usePostalCode } from "../../context/PostalCodeContext";
 import styles from "./Dashboard.styles";
 
 const Dashboard = () => {
   const [searchResults, setSearchResults] = useState("");
+  const { setPostalCodeValue } = usePostalCode();
 
-  const handleEnterPressed = (value) => {
+   const handleEnterPressed = (value) => {
     const postalCode = isPostalCodeExist(value);
     if (postalCode) {
       setSearchResults(`Results for postal code ${value.toUpperCase()}`);
       getPostalCodeData(value);
+      setPostalCodeValue(value);
     } else {
       setSearchResults(
         `No results exist for the postal code ${value.toUpperCase()} you entered.`
