@@ -44,8 +44,16 @@ const HorizontalBarChart = () => {
       options: {
          indexAxis: 'y',
         scales: {
+            y: {
+            grid: {
+              display: false
+            }
+          },
           x: {
             beginAtZero: true,
+            grid: {
+              display: false
+            }
           },
         },
       },
