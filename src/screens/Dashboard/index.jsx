@@ -59,25 +59,30 @@ const Dashboard = () => {
             <Paper elevation={0} style={styles.card}>
               <Grid
                 container
-                flexDirection={"column"}
                 alignItems={"flex-start"}
-                m={2}
+                alignSelf={"flex-start"}
+                m={3}
                 spacing={2}
+                style={{ textAlign: 'left' }}
               >
                 <Grid item>
-                  <Typography variant={"h4"} color={Colors.navyBlue}>
-                    4567
+                  <Typography variant={"h4"} color={Colors.purple}>
+                    Interesting Statistics
                   </Typography>
-                  <Typography variant={"body1"} color={Colors.navyBlue}>
-                    Some text
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant={"h4"} color={Colors.navyBlue}>
-                    4567
-                  </Typography>
-                  <Typography variant={"body1"} color={Colors.navyBlue}>
-                    Some text
+                  <Typography variant={"body1"} color={Colors.navyBlue} mt={5}>
+                    Pedestrian collisions are <strong>83%</strong> correlated with robberies
+                    <br />
+                    Bike collisions are <strong>78%</strong> correlated with breaking and
+                    enterings
+                    <br />
+                    Electric vehicle chargers are <strong>74%</strong> correlated with thefts
+                    inside motor vehicles
+                    <br />
+                    Recreational and sports locations of interest are <strong>79%</strong>{" "}
+                    correlated with the number of trees
+                    <br />
+                    Pedestrian traffic lights are <strong>77%</strong> correlated with public
+                    service locations
                   </Typography>
                 </Grid>
               </Grid>
