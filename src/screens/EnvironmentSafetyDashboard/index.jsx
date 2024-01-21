@@ -1,31 +1,35 @@
-import { Grid, Paper} from "@mui/material";
-
+import { Grid, Paper } from "@mui/material";
+import HorizontalBarChart from "../../components/HorizontalBarChart";
 import Statistics from "../../components/Statistics";
-import styles from "./Dashboard.styles";
+import styles from "./Environment.styles";
 
-const EnvironmentSafetyDashboard = () => {
+const Location = () => {
 
   return (
     <div>
       <div style={styles.backgroundImg} />
-
       <div style={styles.container}>
+        
         <Grid container spacing={2}>
-          <Grid item xs={12} md={2}>
-            <Paper elevation={0} style={styles.card}>
-              stats stuff
+          <Grid item xs={12} md={12}>
+            <Paper elevation={0} style={styles.title}>
+              Environmental Data
             </Paper>
           </Grid>
-          <Grid item xs={12} md={5}>
-            <Paper elevation={0} style={styles.card}>
-              
+          <Grid item xs={12} md={12}>
+            <Paper elevation={0} style={styles.card_one}>
+              <Statistics />
             </Paper>
           </Grid>
-
+          <Grid item xs={12} md={12}>
+            <Paper elevation={0} style={styles.card_two}>
+              <HorizontalBarChart />
+            </Paper>
+          </Grid>
         </Grid>
       </div>
     </div>
   );
 };
 
-export default EnvironmentSafetyDashboard;
+export default Location;
