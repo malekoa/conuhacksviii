@@ -1,10 +1,18 @@
 import Dashboard from "./screens/Dashboard";
-import "./App.css"; 
+import SideBar from "./components/SideBar";
+import "./App.css";
 
 function App() {
   return (
-    <div>
-      <Dashboard />
+    <div className="app-container">
+      <div className="sidebar">
+        <SideBar/>
+      </div>
+
+      <div className="dashboard">
+        <Dashboard/>
+      </div>
+
     </div>
   );
 }
