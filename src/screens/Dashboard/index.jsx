@@ -1,9 +1,10 @@
-import { Grid, Paper, Typography } from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 import Search from "../../components/Search";
 import BarChart from "../../components/BarChart";
 import LineChart from "../../components/LineChart";
 import DonutChart from "../../components/DonutChart";
-import { Colors } from "../../styles/theme"
+import HorizontalBarChart from "../../components/HorizontalBarChart";
+import Statistics from "../../components/Statistics";
 import styles from "./Dashboard.styles";
 
 const Dashboard = () => {
@@ -14,21 +15,24 @@ const Dashboard = () => {
       <Search />
       <div style={styles.container}>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} md={2}>
             <Paper elevation={0} style={styles.card}>
-              <Typography color={Colors.navyBlue} variant="h4">
-                Chart
-              </Typography>
+              <Statistics />
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={5}>
+            <Paper elevation={0} style={styles.card}>
+              <HorizontalBarChart />
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={5}>
+            <Paper elevation={0} style={styles.card}>
+              <DonutChart />
             </Paper>
           </Grid>
           <Grid item xs={12} md={4}>
             <Paper elevation={0} style={styles.card}>
               <BarChart />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper elevation={0} style={styles.card}>
-              <DonutChart />
             </Paper>
           </Grid>
           <Grid item xs={12} md={8}>
