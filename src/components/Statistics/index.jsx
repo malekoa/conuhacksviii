@@ -10,7 +10,7 @@ const Statistics = () => {
             4567
           </Typography>
           <Typography variant={"body1"} color={Colors.navyBlue}>
-          Some text
+            Some text
           </Typography>
         </Grid>
         <Grid item>

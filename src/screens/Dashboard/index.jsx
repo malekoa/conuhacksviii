@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Grid, Paper, Typography } from "@mui/material";
 import Search from "../../components/Search";
 import BarChart from "../../components/BarChart";
-import LineChart from "../../components/LineChart";
 import DonutChart from "../../components/DonutChart";
 import HorizontalBarChart from "../../components/HorizontalBarChart";
 import { Colors } from "../../styles/theme";
@@ -18,8 +17,10 @@ const Dashboard = () => {
     if (postalCode) {
       setSearchResults(`Results for postal code ${value.toUpperCase()}`);
       getPostalCodeData(value);
-    } else { 
-      setSearchResults(`No results exist for the postal code ${value.toUpperCase()} you entered.`);
+    } else {
+      setSearchResults(
+        `No results exist for the postal code ${value.toUpperCase()} you entered.`
+      );
     }
   };
 
@@ -56,7 +57,30 @@ const Dashboard = () => {
           </Grid>
           <Grid item xs={12} md={8}>
             <Paper elevation={0} style={styles.card}>
-              <LineChart />
+              <Grid
+                container
+                flexDirection={"column"}
+                alignItems={"flex-start"}
+                m={2}
+                spacing={2}
+              >
+                <Grid item>
+                  <Typography variant={"h4"} color={Colors.navyBlue}>
+                    4567
+                  </Typography>
+                  <Typography variant={"body1"} color={Colors.navyBlue}>
+                    Some text
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography variant={"h4"} color={Colors.navyBlue}>
+                    4567
+                  </Typography>
+                  <Typography variant={"body1"} color={Colors.navyBlue}>
+                    Some text
+                  </Typography>
+                </Grid>
+              </Grid>
             </Paper>
           </Grid>
         </Grid>
