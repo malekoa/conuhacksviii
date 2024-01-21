@@ -18,7 +18,7 @@ const Search = ({ onEnterPressed }) => {
         ...styles.SearchBar_root,
       }}
       variant="outlined"
-      placeholder={"Search using postal code..."}
+      placeholder={"Search using the first 3 digits of your postal code ..."}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">

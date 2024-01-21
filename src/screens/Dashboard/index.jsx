@@ -7,17 +7,20 @@ import DonutChart from "../../components/DonutChart";
 import HorizontalBarChart from "../../components/HorizontalBarChart";
 import { Colors } from "../../styles/theme";
 import Statistics from "../../components/Statistics";
+import { isPostalCodeExist, getPostalCodeData } from "../../data/dataUtilities";
 import styles from "./Dashboard.styles";
 
 const Dashboard = () => {
   const [searchResults, setSearchResults] = useState("");
 
-  // const handleSearch = (value) => {
-  //   // You can add any search logic here if needed
-  // };
-
   const handleEnterPressed = (value) => {
-    setSearchResults(value);
+    const postalCode = isPostalCodeExist(value);
+    if (postalCode) {
+      setSearchResults(`Results for postal code ${value.toUpperCase()}`);
+      getPostalCodeData(value);
+    } else { 
+      setSearchResults(`No results exist for the postal code ${value.toUpperCase()} you entered.`);
+    }
   };
 
   return (
@@ -26,7 +29,7 @@ const Dashboard = () => {
       <Search onEnterPressed={handleEnterPressed} />
       {searchResults && (
         <Typography variant="h5" color={Colors.navyBlue}>
-          Postal Code {searchResults} Results
+          {searchResults}
         </Typography>
       )}
       <div style={styles.container}>
