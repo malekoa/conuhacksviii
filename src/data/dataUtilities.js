@@ -1,12 +1,12 @@
 import data from "./master.json";
 
 const isPostalCodeExist = (postal_code) => {
-  const found = data.some((entry) => entry.postal_code.toUpperCase() === postal_code.toUpperCase());
+  const found = data.some((entry) => entry["Postal code"].toUpperCase() === postal_code.toUpperCase());
   return found;
 }
 
 const getPostalCodeData = (postal_code) => {
-  const entry = data.find((item) => item.postal_code.toUpperCase() === postal_code.toUpperCase());
+  const entry = data.find((item) => item["Postal code"].toUpperCase() === postal_code.toUpperCase());
 
   if (entry) {
     console.log(entry);
