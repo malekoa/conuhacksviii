@@ -33,8 +33,8 @@ const SideBar = () => {
           </Link>
         </Grid>
         <Grid item>
-          <Link to="/safty">
-            <EmojiPeopleIcon />;
+          <Link to="/safety">
+            <EmojiPeopleIcon />
           </Link>
         </Grid>
         <Grid item>

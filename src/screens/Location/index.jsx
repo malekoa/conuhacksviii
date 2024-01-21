@@ -10,12 +10,12 @@ const Location = () => {
       <div style={styles.backgroundImg} />
       <div style={styles.container}>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={12}>
             <Paper elevation={0} style={styles.card}>
               <Statistics />
             </Paper>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={12}>
             <Paper elevation={0} style={styles.card}>
               <HorizontalBarChart />
             </Paper>
