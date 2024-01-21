@@ -1,9 +1,8 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "./screens/Dashboard";
 import SideBar from "./components/SideBar";
+import EnvironmentSafetyDashboard from "./screens/EnvironmentSafetyDashboard";
 import "./App.css";
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Import Routes instead of Switch
-import EnvironmentSafetyDashboard from "./screens/EnvironmentSafetyDashboard"; 
 
 function App() {
   return (

@@ -14,7 +14,9 @@ const SideBar = () => {
     <div style={styles.container}>
       <Grid container spacing={8} mt={1} flexDirection={"column"}>
         <Grid item>
-          <HomeIcon />
+          <Link to="/">
+            <HomeIcon />
+          </Link>
         </Grid>
         <Grid item>
           <PlaceIcon />
