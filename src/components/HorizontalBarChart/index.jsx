@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { Colors } from "../../styles/theme";
 import Chart from "chart.js/auto";
 
-const LineChart = () => {
+const HorizontalBarChart = () => {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
@@ -15,28 +15,41 @@ const LineChart = () => {
     // Chart.js setup
     const ctx = chartRef.current.getContext("2d");
     chartInstance.current = new Chart(ctx, {
-      type: "line",
+      type: "bar", // Set the chart type to horizontal bar
       data: {
-        labels: ["a1", "a2", "a3", "a4", "a5"],
+        labels: [
+          "Label 1",
+          "Label 2",
+          "Label 3",
+          "Label 4",
+          "Label 5",
+          "Label 6",
+          "Label 7",
+          "Label 8",
+          "Label 9",
+          "Label 10",
+        ],
         datasets: [
           {
-            label: "Line Chart Example",
-            data: [15, 9, 33, 5, 12],
-            backgroundColor: Colors.pink,
-            borderColor: Colors.lightPink,
+            label: "Horizontal Bar Chart Example",
+            data: [12, 19, 3, 5, 8, 15, 7, 10, 6, 9], 
+            backgroundColor: [
+              Colors.lightNavyBlue,
+            ],
+            borderColor: Colors.navyBlue,
             borderWidth: 1,
-            fill: false,
           },
         ],
       },
       options: {
+         indexAxis: 'y',
         scales: {
-          x: {
+            y: {
             grid: {
               display: false
             }
           },
-          y: {
+          x: {
             beginAtZero: true,
             grid: {
               display: false
@@ -55,10 +68,10 @@ const LineChart = () => {
   }, []); // Empty dependency array to run the effect only once
 
   return (
-    <div style={{ justifyContent: "center" }}>
-      <canvas ref={chartRef} width="500" height="300"></canvas>
+    <div>
+      <canvas ref={chartRef} width="400" height="300"></canvas>
     </div>
   );
 };
 
-export default LineChart;
+export default HorizontalBarChart;
